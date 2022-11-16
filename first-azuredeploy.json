@@ -1,0 +1,34 @@
+{
+    //"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "rgName": {
+            "type": "string",
+            "metadata": {
+                "description": "ab-defaultgroup-dev-01-rg-mngt-01"
+            }
+        },
+        "rgLocation": {
+            "type": "string",
+            "metadata": {
+                "description": "West Europe"
+            }
+    }
+        },
+    "functions": [],
+    "variables": {},
+    "resources": [ 
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "[parameters('rgName')]",
+            "properties": {},
+            "tags": {
+                "Environment": "DEV"
+            }
+        }
+    ],
+    "outputs": {}
+}
